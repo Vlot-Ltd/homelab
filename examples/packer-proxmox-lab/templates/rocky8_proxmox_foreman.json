@@ -1,0 +1,73 @@
+{
+    "builders": [
+        {
+          "type": "proxmox-iso",
+          "vm_id": "224",
+          "node": "{{ user `proxmox-node`}}",
+          "proxmox_url": "{{ user `proxmox-url`}}",
+          "username": "{{ user `proxmox-username`}}",
+          "password": "{{user `proxmox-password`}}",
+          "iso_file": "{{ user `iso_url` }}",
+          "iso_checksum": "sha256:{{ user `checksum` }}",
+          "insecure_skip_tls_verify": "true",
+          "vm_name": "{{ user `vm-name` }}",
+          "cores": "{{ user `vm-cpu-num` }}",
+          "sockets": "1",
+          "memory": "{{ user `vm-mem-size` }}",
+          "os": "l26",
+          "boot_command": [
+            "<esc><wait>",
+            "linux inst.ks=http://ks.cloudalbania.com/rocky8_proxmox_vda.cfg<enter>"
+          ],
+          "disks":
+          [
+            {
+              "type": "virtio",
+              "disk_size": "{{ user `vm-disk-size` }}",
+              "storage_pool": "synology",
+              "storage_pool_type": "lvm-thin",
+              "format": "raw"
+            }
+          ],
+          "scsi_controller": "pvscsi",
+          "network_adapters":
+            [
+              {
+                "model": "virtio",
+                "bridge": "vmbr1",
+                "firewall": false
+              }
+            ],
+          "ssh_password": "{{ user `ssh-password` }}",
+          "ssh_username": "root",
+          "unmount_iso": "true",
+          "template_name": "{{ user `vm-name` }}",
+          "template_description": "Proxmox Rocky Linux 8 - Packer image - built on {{isotime \"20060102-150405\"}}",
+          "qemu_agent": "true",
+          "ssh_timeout": "90m",
+          "cloud_init": "true",
+          "cloud_init_storage_pool": "synology"
+        }
+      ],
+    "provisioners": [
+        {
+          "type": "ansible",
+          "playbook_file": "./ansible/playbook.yml"
+        },
+        {
+          "type": "shell",
+          "inline": [
+            "echo '{{ user `vm-name` }} -- Packer Build Complete'"
+          ]
+        }
+    ],
+
+    "variables": {
+      "iso_checksum": "5a0dc65d1308e47b51a49e23f1030b5ee0f0ece3702483a8a6554382e893333c",
+      "iso_url": "local:iso/Rocky-8.5-x86_64-boot.iso",
+      "vm-cpu-num": "4",
+      "vm-disk-size": "5G",
+      "vm-mem-size": "4096",
+      "vm-name": "rocky-8-foreman-template"
+    }
+  }

@@ -1,0 +1,15 @@
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Cache objects
+packer_cache/
+
+# Crash log
+crash.log
+
+# Temp files
+.temp/*
