@@ -40,7 +40,7 @@ This (WIP) page describes a home lab environment for evaluation and testing of v
     - 2x [Seagate IronWolf 12TB NAS Hard Drive, 3.5 inch, 7200RPM, 256MB Cache, CMR](https://www.seagate.com/gb/en/products/nas-drives/ironwolf-hard-drive/) for data storage (Plex, TrueNas, backups)
   - Old "recovered" hardware
     - 2x 8Tb drives recovered from current Plex server eventually for data storage
-- Rasberry Pis
+- [![Raspberry Pi][RaspberryPi-Img]][RaspberryPi-Url]
   - 1x Raspberri Pi 4 8Gb running K3s (will migrate to Proxmox)
   - 1x Raspberri Pi 4 4Gb running Home Assistant (will migrate to Proxmox)
   - 1x Raspberri Pi 4 4Gb - unused
@@ -62,7 +62,7 @@ This (WIP) page describes a home lab environment for evaluation and testing of v
 - Network
   - LAN: `192.168.1.0/24`
   - Gateway: `192.168.1.254`
-  - DHCP: Range `192.168.2.150-.199`, provided by BT Smart Hub 2
+  - DHCP: Range `192.168.2.150-.199` TBC
   - DNS Server: `192.168.1.254` 
 - Wireless
   - BT Smart Hub 2.4Ghz/5Ghz Wi-Fi
@@ -79,6 +79,7 @@ Proxmox configuration requires installation of [Proxmox VE](https://www.proxmox.
 ## Metrics, Monitoring & Logging
 
 - Prometheus / Grafana Cloud --- DOCUMENT SETUP
+- Zabbix
 
 ## Proxmox VM Templates
 
@@ -146,6 +147,8 @@ TBD
 [Proxmox-Url]: https://proxmox.com/en/proxmox-ve
 [PuppetEnterprise-Img]: https://img.shields.io/badge/Puppet_Enterprise-20232A?style=for-the-badge&logo=puppet
 [PuppetEnterprise-Url]: https://www.puppet.com/products/puppet-enterprise
+[RaspberryPi-Img]: https://img.shields.io/badge/RaspberryPi-20232A?style=for-the-badge&logo=raspberrypi&logoColor=red
+[RaspberryPi-Url]: https://www.raspberrypi.com
 [Terraform-Img]: https://img.shields.io/badge/terraform-20232A?style=for-the-badge&logo=terraform&logoColor=blueviolet
 [Terraform-Url]: https://proxmox.com/en/proxmox-ve
 [TrueNas-Img]: https://img.shields.io/badge/TrueNAS-20232A?style=for-the-badge&logo=truenas
