@@ -13,3 +13,6 @@ crash.log
 
 # Temp files
 .temp/*
+
+# Environment variables
+.env/*

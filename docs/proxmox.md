@@ -4,6 +4,8 @@
 
 Proxmox configuration requires installation of [Proxmox VE](https://www.proxmox.com/en/downloads) on the server. The configuration steps need to be confirmed.
 
+https://forum.proxmox.com/threads/installation-gui-fails-to-start.124854/#post-545030
+
 ## Proxmox VM Templates
 
 VM deployments based on a [template](https://pve.proxmox.com/wiki/VM_Templates_and_Clones) are much faster than running through a new install. The packer code in this repo builds Proxmox template images (and handles OS / package updates) for most frequently used VM operating systems. These templates are used for later infrastructure provisioning.
