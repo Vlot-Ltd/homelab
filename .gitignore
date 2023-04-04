@@ -15,4 +15,4 @@ crash.log
 .temp/*
 
 # Secrets
-*_secrets.pkr.hcl
+*-secrets.pkr.hcl
