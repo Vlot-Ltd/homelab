@@ -1,3 +1,11 @@
+packer {
+  required_plugins {
+    proxmox = {
+      version = ">= 1.1.2"
+      source  = "github.com/hashicorp/proxmox"
+    }
+  }
+}
 
 variable "iso_checksum" {
   type    = string
@@ -61,7 +69,7 @@ variable "vm_cpu_type" {
 
 variable "vm_disk_format" {
   type    = string
-  default = "qcow2"
+  default = "raw"
 }
 
 variable "vm_disk_size" {
@@ -106,7 +114,7 @@ variable "vm_sockets" {
 
 variable "vm_storage_pool" {
   type    = string
-  default = "vm-store"
+  default = "vmosstorage"
 }
 
 variable "vm_storage_pool_type" {
