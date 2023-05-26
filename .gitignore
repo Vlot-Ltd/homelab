@@ -17,3 +17,4 @@ crash.log
 # Secrets
 *-secrets.pkr.hcl
 megalinter-reports/
+.env

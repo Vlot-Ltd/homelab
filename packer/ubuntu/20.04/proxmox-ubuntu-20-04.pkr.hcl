@@ -19,25 +19,25 @@ variable "iso_filename" {
 
 variable "proxmox_api_url" {
   type    = string
-  default = null
+  default = "${env("PROXMOX_API_URL")}"
 }
 
 variable "proxmox_node" {
   type    = string
-  default = null
+  default = "${env("PROXMOX_NODE")}"
 }
 
 variable "proxmox_user" {
   type    = string
-  default = null
-}
-
-variable "proxmox_vmid" {
-  type    = string
-  default = null
+  default = "${env("PROXMOX_API_TOKEN_ID")}"
 }
 
 variable "proxmox_token" {
+  type    = string
+  default = "${env("PROXMOX_API_TOKEN_SECRET")}"
+}
+
+variable "proxmox_vmid" {
   type    = string
   default = null
 }
@@ -177,7 +177,8 @@ build {
 
   provisioner "shell" {
     execute_command = "echo 'proxmox' | {{ .Vars }} sudo -S -E bash '{{ .Path }}'"
-    scripts         = ["ubuntu/20.04/update.sh", "ubuntu/20.04/cleanup.sh"]
+    #scripts         = ["ubuntu/20.04/update.sh", "ubuntu/20.04/cleanup.sh"]
+    scripts         = ["ubuntu/20.04/update.sh"]
   }
 
 }
