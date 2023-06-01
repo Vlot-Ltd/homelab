@@ -1,0 +1,1 @@
+Added towncrier as Changelog management tool

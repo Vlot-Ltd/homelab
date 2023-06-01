@@ -2,7 +2,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v3.4.0
+  rev: v4.4.0
   hooks:
   - id: check-added-large-files
   - id: check-docstring-first
@@ -17,31 +17,27 @@ repos:
   - id: requirements-txt-fixer
   - id: trailing-whitespace
 - repo: https://github.com/Yelp/detect-secrets
-  rev: 'v1.0.3'
+  rev: 'v1.4.0'
   hooks:
   - id: detect-secrets
-- repo: https://github.com/pappasam/toml-sort
-  rev: 'v0.19.0'
-  hooks:
-  - id: toml-sort
 - repo: https://github.com/psf/black
-  rev: 20.8b1
+  rev: 23.3.0
   hooks:
   - id: black
 - repo: https://github.com/asottile/pyupgrade
-  rev: v2.11.0
+  rev: v3.4.0
   hooks:
   - id: pyupgrade
 - repo: https://github.com/PyCQA/bandit
-  rev: '1.7.0'
+  rev: '1.7.5'
   hooks:
   - id: bandit
 - repo: https://github.com/jazzband/pip-tools
-  rev: '6.0.1'
+  rev: '6.13.0'
   hooks:
   - id: pip-compile
 - repo: https://github.com/sondrelg/pep585-upgrade
-  rev: '5f7033a0d0174c65105b041500060b993c1bc211' # pragma: allowlist secret
+  rev: 'v1.0' # pragma: allowlist secret
   hooks:
   - id: upgrade-type-hints
 - repo: https://github.com/doublify/pre-commit-go
@@ -65,10 +61,10 @@ repos:
   #- id: terraform_fmt
   #- id: terraform_validate
 - repo: https://github.com/IamTheFij/docker-pre-commit
-  rev: 'v2.0.0'
+  rev: 'v3.0.1'
   hooks:
   - id: docker-compose-check
 - repo: https://github.com/ashwin153/pre-commit-vagrant
-  rev: v1.1.0
+  rev: v1.2.0
   hooks:
       - id: vagrant-validate
