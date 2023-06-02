@@ -33,7 +33,7 @@ provider "proxmox" {
 #---------- Hashicorp Vault -------------- #
 #------------------------------------------#
 module "vault" {
-  source = "./live/vault"
+  source = "./modules/vault"
   providers = {
     proxmox = proxmox
   }
@@ -43,7 +43,7 @@ module "vault" {
 #---------------- Docker ----------------- #
 #------------------------------------------#
 module "docker" {
-  source = "./live/docker"
+  source = "./modules/docker"
   providers = {
     proxmox = proxmox
   }
@@ -53,7 +53,7 @@ module "docker" {
 #---------------- Database --------------- #
 #------------------------------------------#
 module "db" {
-  source = "./live/db"
+  source = "./modules/db"
   providers = {
     proxmox = proxmox
   }

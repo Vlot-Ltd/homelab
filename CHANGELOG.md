@@ -1,3 +1,16 @@
+## [0.0.4](https://github.com/Vlot-Ltd/homelab) - 20230602
+
+
+### Changed
+
+- Terraform module defined. Base proxmox vm terraform code added
+
+
+## [0.0.3](https://github.com/Vlot-Ltd/homelab) - 20230602
+
+No significant changes.
+
+
 ## [0.0.2](https://github.com/Vlot-Ltd/homelab) - 2023-01-06
 
 
