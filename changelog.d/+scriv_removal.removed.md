@@ -1,1 +1,0 @@
-Remove scriv as Changelog management tool

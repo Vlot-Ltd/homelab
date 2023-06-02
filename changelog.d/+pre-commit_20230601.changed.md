@@ -1,1 +1,0 @@
-Updated pre-commit tool and configuration
