@@ -1,3 +1,16 @@
+## [0.0.4](https://github.com/Vlot-Ltd/homelab) - 20230609
+
+
+### Removed
+
+- Cleaning up some unneeded stuff from the local example repos [#001_cleanup_examples](https://github.com/Vlot-Ltd/homelab/issues/001_cleanup_examples)
+
+
+### Changed
+
+- Reducing duplicate data in .tf files [#002_changed_terrafrom_setup](https://github.com/Vlot-Ltd/homelab/issues/002_changed_terrafrom_setup)
+
+
 ## [0.0.4](https://github.com/Vlot-Ltd/homelab) - 20230602
 
 

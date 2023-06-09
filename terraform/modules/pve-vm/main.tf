@@ -1,11 +1,3 @@
-terraform {
-  required_providers {
-    proxmox = {
-      source = "Telmate/proxmox"
-      version = "~> 2.6.7"
-    }
-  }
-}
 
 resource "proxmox_vm_qemu" "qemu_vm" {
     name = var.vm_name

@@ -1,8 +1,3 @@
-#-------------------------------------------------------------------------------------------#
-# Proxmox Variables
-# Reference: https://github.com/Telmate/terraform-provider-proxmox/blob/master/docs/index.md
-#-------------------------------------------------------------------------------------------#
-
 variable "proxmox_api_url" {
   description = "This is the target Proxmox API endpoint"
   type        = string

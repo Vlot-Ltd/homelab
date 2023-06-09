@@ -1,1 +1,0 @@
-Cleaning up some unneeded stuff from the local example repos
