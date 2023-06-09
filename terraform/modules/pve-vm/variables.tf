@@ -10,11 +10,13 @@ variable "vm_name" {
 variable "target_node" {
     description = "The name of the Proxmox node on which to place the VM"
     type = string
+    default = "proxmox"
 }
 
 variable "clone" {
     description = "The base VM from which to clone to create the new VM."
     type = string
+    default = "template-ubuntu-220402"
 }
 
 variable "full_clone" {
@@ -32,7 +34,7 @@ variable "clone_wait" {
 variable "desc" {
     description = "Sets the description seen in the web interface"
     type = string
-    default = "Terraform created VM"
+    default = "VM created with Terraform on ${timestamp()}"
 }
 
 variable "sockets" {
@@ -81,7 +83,7 @@ variable "vm_disk" {
     default = [
         {
         type        = "scsi"
-        storage     = "vmstorage"
+        storage     = "vmosstorage"
         size        = "50G"
         format      = "raw"
         ssd         = 0
@@ -142,7 +144,7 @@ variable "private_key" {
 variable "default_image_username" {
     description = "Username baked into template image, used for initial connection for configuration"
     type = string
-    default = proxmox
+    default = "proxmox"
 }
 
 variable "default_image_password" {

@@ -3,7 +3,6 @@ terraform {
     proxmox = {
       source = "Telmate/proxmox"
       version = "~> 2.6.7"
-      //configuration_aliases = [ proxmox, proxmox.raspi ]
     }
   }
 }
@@ -53,11 +52,6 @@ resource "time_sleep" "wait_180_sec" {
   depends_on = [proxmox_vm_qemu.qemu_vm]
   create_duration = "180s"
 }
-
-//resource "time_sleep" "wait_90_sec" {
-//  depends_on = [proxmox_vm_qemu.qemu_vm]
-//  create_duration = "90s"
-//}
 
 // Post-provisioning pre-Ansible connectivity check before handoff to Ansible in parent module.
 // Default timeout of 5 minutes.
