@@ -177,4 +177,5 @@ build {
   provisioner "shell" {
     execute_command = "echo 'proxmox' | {{ .Vars }} sudo -S -E bash '{{ .Path }}'"
     inline          = ["apt-get -y update && apt-get -y dist-upgrade && apt-get -y autoremove --purge && apt-get -y clean"]
+  }
 }
