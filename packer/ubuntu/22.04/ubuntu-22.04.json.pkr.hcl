@@ -40,7 +40,7 @@ variable "proxmox_token" {
 
 variable "proxmox_vmid" {
   type    = string
-  default = null
+  default = "900"
 }
 
 variable "ssh_password" {
@@ -174,10 +174,5 @@ build {
 
   provisioner "shell" {
     inline = ["while [ ! -f /var/lib/cloud/instance/boot-finished ]; do echo 'Waiting for cloud-init...'; sleep 1; done"]
-  }
-
-  provisioner "shell" {
-    execute_command = "echo 'proxmox' | {{ .Vars }} sudo -S -E bash '{{ .Path }}'"
-    inline          = ["apt-get -y update && apt-get -y dist-upgrade && apt-get -y autoremove --purge && apt-get -y clean"]
   }
 }
