@@ -1,0 +1,19 @@
+#cloud-config
+autoinstall:
+  version: 1
+  identity:
+    hostname: tpl-ubuntu-2204
+    username: proxmox
+    # 'ubuntu', but hashed
+    #password: "$6$exDY1mhS4KUYCE/2$zmn9ToZwTKLhCw.b4/b.ZRTIZM30JZ4QrOQ2aOXJ8yk96xpcCof0kxKwuX1kqLG/ygbJ1f8wxED22bTL4F46P0"
+    # 'ansible', but hashed
+    password: "$6$.VBz4.cvtp/M1Mat$IwEkrvCEzYy6WAuFzsQOttiJ.yhuS2B0EcVaUrYeh0q6JDDWayzM7.em0kc4CmWM0FHpL1iCvwd5GJRKTb/AT0"
+  ssh:
+    install-server: true
+    allow-pw: true
+  package-update: true
+  package-upgrade: true
+  packages:
+    - qemu-guest-agent
+  late-commands:
+    - echo 'proxmox ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/proxmox
