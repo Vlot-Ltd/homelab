@@ -16,7 +16,7 @@ variable "target_node" {
 variable "clone" {
     description = "The base VM from which to clone to create the new VM."
     type = string
-    default = "template-ubuntu-220402"
+    default = "tpl-ubuntu-22-04"
 }
 
 variable "full_clone" {
@@ -34,7 +34,7 @@ variable "clone_wait" {
 variable "desc" {
     description = "Sets the description seen in the web interface"
     type = string
-    default = "VM created with Terraform on ${timestamp()}"
+    default = "VM created with Terraform"
 }
 
 variable "sockets" {
@@ -52,7 +52,7 @@ variable "cores" {
 variable "memory" {
     description = "A number containing the amount of RAM to assign to the container (in MB)."
     type = string
-    default = "4096"
+    default = "2048"
 }
 
 variable "vm_network" {

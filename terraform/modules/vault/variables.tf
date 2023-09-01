@@ -3,12 +3,12 @@ locals {
   # -- Common Variables -- #
   desc = "Hashicorp Vault VM, created with Terraform on ${timestamp()}"
   full_clone = true
-  default_image_username = "ansible"
-  default_image_password = "ansible" #pragma: allowlist secret
+  default_image_username = "proxmox"
+  default_image_password = "proxmox" #pragma: allowlist secret
   clone_wait = 5
   onboot = true
-  nameserver = "192.168.2.1"
-  searchdomain = "int.layer8sys.com"
+  nameserver = "192.168.1.254"
+  searchdomain = "local"
   // Dynamic block for network adapters to add to VM
   vm_network = [
     {
@@ -32,15 +32,13 @@ locals {
   agent = 1
   ssh_public_keys = tls_private_key.bootstrap_private_key.public_key_openssh
   terraform_provisioner_type = "ssh"
-  target_node = "pve3"
-  clone = "tpl-ubuntu-20-04-3-pve3"
+  target_node = "proxmox"
+  clone = "tpl-ubuntu-22-04"
   vm_name = "vault"
   vm_sockets = 2
   vm_cores = 2
   vm_memory = "4096"
-  vm_ip_address = "192.168.2.39"
+  vm_ip_address = "192.168.1.6"
   vm_ip_cidr = "/24"
-  vm_ip_gw = "192.168.2.1"
-  ansible_inventory_group = "hashi_vault"
-
+  vm_ip_gw = "192.168.1.254"
 }

@@ -3,11 +3,12 @@
 
 terraform {
   required_providers {
-    proxmox = {
-      source = "Telmate/proxmox"
-      version = "~> 2.6.7"
-    }
-  }
+    proxmox
+    #proxmox = {
+      #source = "Telmate/proxmox"
+      #version = "~> 2.6.7"
+    #}
+  #}
 }
 
 
@@ -49,34 +50,4 @@ resource "local_file" "temp-private-key" {
   sensitive_content = tls_private_key.bootstrap_private_key.private_key_pem
   filename = "${path.module}/private_key.pem"
   file_permission = "0600"
-}
-
-// Create Ansible inventory file
-module "ansible_inventory" {
-  source = "../../modules/create-ansible-inventory"
-  servers = {
-    (local.ansible_inventory_group) = [local.vm_ip_address]
-  }
-  ansible_inventory_filename = local.ansible_inventory_group
-}
-
-// Ansible post-provisioning configuration
-resource "null_resource" "configuration" {
-  depends_on = [
-    module.vault_vm,
-  ]
-
-  // Clear existing records (if exists) from known_hosts to prevent possible ssh connection issues
-  provisioner "local-exec" {
-    command = <<-EOT
-      if test -f "~/.ssh/known_hosts"; then
-        ssh-keygen -f ~/.ssh/known_hosts -R ${local.vm_ip_address}
-      fi
-      EOT
-  }
-
-  // Ansible playbook run
-  provisioner "local-exec" {
-    command = "ansible-playbook -u ${local.default_image_username} -i ../ansible/inventory --private-key ${path.module}/private_key.pem --vault-password-file ../ansible/.vault_pass ../ansible/${local.ansible_inventory_group}.yml"
-  }
 }

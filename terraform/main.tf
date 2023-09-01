@@ -21,21 +21,11 @@ module "vault" {
 }
 
 #------------------------------------------#
-#---------------- Docker ----------------- #
-#------------------------------------------#
-module "docker" {
-  source = "./modules/docker"
-  providers = {
-    proxmox = proxmox
-  }
-}
-
-#------------------------------------------#
 #---------------- Database --------------- #
 #------------------------------------------#
-module "db" {
-  source = "./modules/db"
-  providers = {
-    proxmox = proxmox
-  }
-}
+#module "db" {
+  #source = "./modules/db"
+  #providers = {
+    #proxmox = proxmox
+  #}
+#}
