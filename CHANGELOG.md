@@ -1,3 +1,11 @@
+## [0.0.5](https://github.com/Vlot-Ltd/homelab) - 20230906
+
+
+### Removed
+
+- Moving different code areas (ansible, salt, terraform, packer) into dedicated repos [#002_repo_simplifications](https://github.com/Vlot-Ltd/homelab/issues/002_repo_simplifications)
+
+
 ## [0.0.4](https://github.com/Vlot-Ltd/homelab) - 20230609
 
 
