@@ -48,7 +48,7 @@ This (WIP) page describes a home lab environment for evaluation and testing of v
 [K3s-Img]: https://img.shields.io/badge/K3s-20232A?style=for-the-badge&logo=k3s
 [K3s-Url]: https://k3s.io
 [Packer-Img]: https://img.shields.io/badge/Packer-20232A?style=for-the-badge&logo=packer
-[Packer-Url]: https://proxmox.com/en/proxmox-ve
+[Packer-Url]: https://www.packer.io
 [Plex-Img]: https://img.shields.io/badge/Plex_Media_Server-20232A?style=for-the-badge&logo=plex
 [Plex-Url]: https://plex.tv
 [Proxmox-Img]: https://img.shields.io/badge/Proxmox-20232A?style=for-the-badge&logo=proxmox
@@ -56,6 +56,6 @@ This (WIP) page describes a home lab environment for evaluation and testing of v
 [PuppetEnterprise-Img]: https://img.shields.io/badge/Puppet_Enterprise-20232A?style=for-the-badge&logo=puppet
 [PuppetEnterprise-Url]: https://www.puppet.com/products/puppet-enterprise
 [Terraform-Img]: https://img.shields.io/badge/terraform-20232A?style=for-the-badge&logo=terraform&logoColor=blueviolet
-[Terraform-Url]: https://proxmox.com/en/proxmox-ve
+[Terraform-Url]: https://www.terraform.io
 [TrueNas-Img]: https://img.shields.io/badge/TrueNAS-20232A?style=for-the-badge&logo=truenas
 [TrueNas-Url]: https://www.truenas.com
