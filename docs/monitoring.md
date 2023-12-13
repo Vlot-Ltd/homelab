@@ -17,6 +17,7 @@
 - [Saltstack Exporter for Prometheus](https://github.com/BonnierNews/saltstack_exporter)
 - [Plexporters, Energize: How we monitor Plex with Grafana](https://grafana.com/blog/2023/04/28/plexporters-energize-how-we-monitor-plex-with-grafana/)
   - [Prometheus Exporter for Plex](https://github.com/jsclayton/prometheus-plex-exporter)
+- [Hashicorp Vault Monitor telemetry with Prometheus & Grafana](https://developer.hashicorp.com/vault/tutorials/monitoring/monitor-telemetry-grafana-prometheus)
 - [Grafana Home Dashboard](https://github.com/TehloWasTaken/HomeDashboard)
 - [After months of playing with Grafana, my Home Dashboard is complete!](https://www.reddit.com/r/homelab/comments/ifynfi/after_months_of_playing_with_grafana_my_home/)
 - [TrueNAS customized dashboard with InfluxDB and Grafana](https://www.reddit.com/r/homelab/comments/iikpw3/truenas_customized_dashboard_with_influxdb_and/)
